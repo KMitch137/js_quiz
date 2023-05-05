@@ -1,0 +1,7 @@
+.question-container{
+    display:none;
+}
+
+#countdown{
+    display: inline-flex;
+}
