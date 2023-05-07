@@ -17,13 +17,13 @@
 
 
 body {
-    background-color: rgb(179, 92, 92);
+    background-color: rgb(197, 177, 177);
 
 }
 
 h1,
 h2 {
-    color: rgb(228, 228, 54);
+    color: rgb(124, 124, 13);
     text-align: center;
 }
 
@@ -46,7 +46,7 @@ p {
 
 button {
     outline: none;
-    background-color: rgb(70, 68, 68);
+    background-color: rgb(236, 109, 109);
     font-size: 1.3em;
 }
 
@@ -71,7 +71,6 @@ button {
 
 .top-bar p {
     float: right;
-
 }
 
 
@@ -99,8 +98,9 @@ main {
     margin-bottom: 30vh;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: rgb(90, 95, 95);
+    background-color: rgb(221, 231, 231);
     display: block;
+    box-shadow: 20px 10px black;
 }
 
 

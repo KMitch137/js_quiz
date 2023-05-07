@@ -16,20 +16,26 @@ var questions = [question1, question2, question3]
 
 var question1 = {
     title: "Are semicolons bad?",
-    choices: ["Yes", "No", "Sometimes"],
+    choices: ["Yes", "No", "Sometimes", "what?"],
     answer: "No",
 }
 
 var question2 = {
     title: "Are question marks bad?",
-    choices: ["Yes", "No", "Sometimes"],
+    choices: ["Yes", "No", "Sometimes", "what?"],
     answer: "No",
 }
 
 var question3 = {
     title: "Are hashtags bad?",
-    choices: ["Yes", "No", "Sometimes"],
+    choices: ["Yes", "No", "Sometimes", "What?"],
     answer: "No",
+}
+
+var question3 = {
+    title: "What symbols must be used when calling a function??",
+    choices: ["$$", "()", "''", "!!"],
+    answer: "()",
 }
 
 function startQuiz() {
@@ -48,6 +54,7 @@ function endGame() {
 function resetGame() {
     quizFinish.style.display = "none"
     quizIntro.style.display = "block"
+    location.reload();
 }
 
 //starts quiz: timer starts and questions display
