@@ -1,0 +1,87 @@
+/*--------*/
+/* Global */
+/*--------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /*degault font*/
+    font-family: 'Times New Roman', Times, serif;
+
+    /*debugging*/
+    border: 1px solid red;
+}
+
+body {
+    background-color: grey;
+
+}
+
+/*-----*/
+/*timer*/
+/*-----*/
+
+p {
+    color: white;
+    font-size: 1.3em;
+}
+
+/*----------*/
+/*highscores*/
+/*----------*/
+
+button {
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 1.3em;
+}
+
+
+/*----------------------*/
+/*outer contienr section*/
+/*----------------------*/
+
+.outer-container {
+    padding: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+
+/*-----------------*/
+/*top bar container*/
+/*-----------------*/
+
+.top-bar p {
+    float: right;
+
+}
+
+
+/*----------------------*/
+/*inner contienr section*/
+/*----------------------*/
+ .inner-container {
+    background-color: black;
+    height: 100%;
+ }
+
+
+/*-------------------------*/
+/*header/quiz intro section*/
+/*-------------------------*/
+
+
+
+
+/*-----------------*/
+/*Main Quiz Content*/
+/*-----------------*/
+
+
+
