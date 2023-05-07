@@ -1,18 +1,12 @@
 var startButton = document.getElementById("start");
-
 var highScoreButton = document.getElementById("see-scores")
-
 var highScores = document.getElementById("top-score");
-
 var quizIntro = document.querySelector(".quiz-intro");
-
 var quizFinish = document.querySelector(".quiz-finish-screen");
-
 var questionScreen = document.querySelector(".question-screen")
-
 var timerEl = document.getElementById('timer');
-
 var questions = [question1, question2, question3]
+
 
 var question1 = {
     title: "Are semicolons bad?",
@@ -78,6 +72,7 @@ function countDown() {
 // Resets game back to main scrren
 reset.addEventListener("click", resetGame)
 
+//Displays highiscores
 highScoreButton.addEventListener("click", seeScores)
 
 function seeScores() {
@@ -85,3 +80,11 @@ function seeScores() {
     quizIntro.style.display = "none"
     highScores.style.display = "block"
 }
+
+//generates questions when quiz starts
+function getQuestions() {
+    quizQuestion = questions[Math.floor(Math.random() * questions.length)];
+
+}
+
+

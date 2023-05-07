@@ -149,7 +149,7 @@ label {
 
 #reset-button {
     margin-top: 25px;
-    padding-left: 160px;
+    padding-left: auto;
 }
 
 /*-----------------*/
@@ -161,6 +161,7 @@ label {
 }
 
 .top-score ol {
+    
     overflow-y: scroll;
     max-height: 100px;
 }
