@@ -1,5 +1,7 @@
 var startButton = document.getElementById("start");
 
+var highScoreButton = document.getElementById("see-scores")
+
 var highScores = document.getElementById("top-score");
 
 var quizIntro = document.querySelector(".quiz-intro");
@@ -33,12 +35,14 @@ var question3 = {
 function startQuiz() {
     quizIntro.style.display = "none"
     questionScreen.style.display = "block"
+    highScoreButton.style.display = "none"
     countDown();
 }
 
 function endGame() {
     questionScreen.style.display = "none";
     quizFinish.style.display = "block";
+    highScoreButton.style.display = "block";
 }
 
 function resetGame() {
@@ -67,3 +71,10 @@ function countDown() {
 // Resets game back to main scrren
 reset.addEventListener("click", resetGame)
 
+highScoreButton.addEventListener("click", seeScores)
+
+function seeScores() {
+    quizFinish.style.display = "none"
+    quizIntro.style.display = "none"
+    highScores.style.display = "block"
+}
