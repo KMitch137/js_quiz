@@ -1,6 +1,6 @@
 var startButton = document.getElementById("start");
 
-var highScores = document.getElementById("highscores-screen");
+var highScores = document.getElementById("top-score");
 
 var quizIntro = document.querySelector(".quiz-intro");
 
@@ -41,10 +41,15 @@ function endGame() {
     quizFinish.style.display = "block";
 }
 
+function resetGame() {
+    quizFinish.style.display = "none"
+    quizIntro.style.display = "block"
+}
 
+//starts quiz: timer starts and questions display
 start.addEventListener("click", startQuiz, countDown)
 
-
+// Timer Settings
 function countDown() {
     var timeLeft = 05;
     var timeInterval = setInterval(function () {
@@ -58,3 +63,7 @@ function countDown() {
         }
     }, 1000);
 }
+
+// Resets game back to main scrren
+reset.addEventListener("click", resetGame)
+

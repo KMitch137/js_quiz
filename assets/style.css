@@ -138,6 +138,7 @@ main {
 
 .quiz-finish-screen {
     display: none;
+
 }
 
 label {
@@ -153,11 +154,11 @@ label {
 /*highscores screen*/
 /*-----------------*/
 
-.highscores-screen {
+#top-score {
     display: none;
 }
 
-.highscores-screen ol {
+.top-score ol {
     overflow-y: scroll;
     max-height: 100px;
 }
