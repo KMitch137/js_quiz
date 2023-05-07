@@ -4,4 +4,13 @@
 
 #countdown{
     display: inline-flex;
+    height: 100px;
+    padding: 10px;
+    background: #13293d;
+    color: #fff;
+    text-align: center;
 }
+.timer {
+    padding: 55px;
+    font-size: x-large;
+  }
