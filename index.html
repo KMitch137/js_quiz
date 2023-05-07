@@ -5,63 +5,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz!</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Test</title>
 </head>
 
 <body>
-    <!-- main outter div-->
-    <div>
-        <!--Top bar-->
-        <div id="countdown">
-            <p>Seconds remaining:</p>
-            <div class="timer">120</div>
-        </div>
-        <!--inner div-->
-        <div>
-            <!--Header/intro-->
-            <header>
-                <div class="start-container">
-                    <h1 class="title">Coding Quiz Challenge</h1>
-                    <p class="start-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                        repudiandae
-                        illum
-                        corrupti nostrum velit ut
-                        expedita, voluptates similique dolor tempora. Adipisci eum recusandae, nesciunt atque totam
-                        accusamus
-                        maxime.
-                        Officiis, voluptatum facere pariatur enim ullam at voluptas, perferendis veniam qui aperiam
-                        magni
-                        doloremque
-                        tempora est consectetur autem, necessitatibus deserunt corporis quo.</p>
-                    <button id="start-button">Start Quiz</button>
-                </div>
-            </header>
-            <!--main Quiz content-->
-            <main>
-                <div class="question-container">
-                    <h1 class="question-title">Quiz Started</h1>
-                    <p class="question-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                        repudiandae
-                        illum
-                        corrupti nostrum velit ut
-                        expedita, voluptates similique dolor tempora. Adipisci eum recusandae, nesciunt atque totam
-                        accusamus
-                        maxime.
-                        Officiis, voluptatum facere pariatur enim ullam at voluptas, perferendis veniam qui aperiam
-                        magni
-                        doloremque
-                        tempora est consectetur autem, necessitatibus deserunt corporis quo.</p>
+    <!--main outer div-->
+    <div class="outer-container">
 
-                    <button id="question-button">Start Quiz</button>
+        <!--top bar section-->
+        <div class="top-bar">
+            <button id="highscores">View Highscores</button>
+            <div>
+                <p id="timer">Timer: 00:30</p>
+            </div>
+
+        </div>
+
+        <!-------------------->
+        <!--  !! PHASE 1 !! -->
+        <!-------------------->
+
+        <!--inner div-->
+        <div class="inner-container">
+
+            <!--main header/quiz intro-->
+            <header class="quiz-intro">
+                <h1>Welcome to the quiz</h1>
+                <p>Ready to test your knowledge?</p>
+                <button id="start">start the quiz!</button>
+
+            </header>
+
+            <!--main quiz content-->
+            <main>
+
+                <!-------------------->
+                <!--  !! PHASE 2 !! -->
+                <!-------------------->
+
+                <section class="question-screen">
+                    <h2>Question</h2>
+                    <ul>
+                        <!--generate in JS-->
+                        <li><button>Answer 1</button></li>
+                        <li><button>Answer 2</button></li>
+                        <li><button>Answer 3</button></li>
+                        <li><button>Answer 4</button></li>
+                    </ul>
+
+                </section>
+
+                <!-------------------->
+                <!--  !! PHASE 3 !! -->
+                <!-------------------->
+                <div class="quiz-finish-screen">
+                    <h2>Finished</h2>
+                    <p>Your score: 00</p>
+                    <div>
+                        <label for="">Enter Initials:</label>
+                        <input type="text">
+                        <button>Submit</button>
+
+                    </div>
+                    <div id="reset-button">
+                        <button id="reset">Reset Game</button>
+                    </div>
+
                 </div>
+
+                <!-------------------->
+                <!--  !! PHASE 3 !! -->
+                <!-------------------->
+
+
+                <section class="highscores-screen">
+                    <h2>Highscores</h2>
+                    <ol>
+                        <!--generate in JS-->
+                        <li>km - 20</li>
+                        <li>ak - 22</li>
+                        <li>km - 20</li>
+                        <li>ak - 22</li>
+                    </ol>
+                </section>
+
+
+
+
+
             </main>
 
         </div>
-
-        <script src="./script.js"></script>
+        <script src="./assets/script.js"></script>
     </div>
-
 </body>
 
 </html>

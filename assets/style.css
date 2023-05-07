@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    color: rgb(0, 0, 0);
 
     /*degault font*/
     font-family: 'Times New Roman', Times, serif;
@@ -17,7 +17,7 @@
 
 
 body {
-    background-color: grey;
+    background-color: rgb(179, 92, 92);
 
 }
 
@@ -79,7 +79,7 @@ button {
 /*----------------------*/
  .inner-container {
     margin-top: 10px;
-    background-color: black;
+    /*background-color: rgb(90, 95, 95);*/
     height: 100%;
     width: 50%;
     margin: 0 auto;
@@ -98,13 +98,14 @@ button {
     margin-left: 10%;
     margin-right: 10%;
     background-color: rgb(90, 95, 95);
-    display: none;
+    display: block;
 }
 
 
 .quiz-intro p {
     text-align: center;
 }
+
  .quiz-intro button {
     display: block;
     margin: 0 auto
@@ -139,13 +140,21 @@ main {
     display: none;
 }
 
+label {
+    color: black;
+}
+
+#reset-button {
+    margin-top: 25px;
+    padding-left: 160px;
+}
 
 /*-----------------*/
 /*highscores screen*/
 /*-----------------*/
 
 .highscores-screen {
-    display: block;
+    display: none;
 }
 
 .highscores-screen ol {
