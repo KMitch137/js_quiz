@@ -5,46 +5,46 @@ var quizIntro = document.querySelector(".quiz-intro");
 var quizFinish = document.querySelector(".quiz-finish-screen");
 var questionScreen = document.querySelector(".question-screen")
 var timerEl = document.getElementById('timer');
-var questions = [question1, question2, question3]
-var askQuestion = document.querySelector(".question")
+var questions = [question1, question2, question3, question4]
+
+
+//generates questions when quiz starts
+function getQuestion() {
+    questionContainer = []
+
+ 
+}
 
 var question1 = {
-    title: "Are semicolons bad?",
+    question: "Are semicolons bad?",
     choices: ["Yes", "No", "Sometimes", "what?"],
     answer: "No",
 }
 
 var question2 = {
-    title: "Are question marks bad?",
+    question: "Are question marks bad?",
     choices: ["Yes", "No", "Sometimes", "what?"],
     answer: "No",
 }
 
 var question3 = {
-    title: "Are hashtags bad?",
+    question: "Are hashtags bad?",
     choices: ["Yes", "No", "Sometimes", "What?"],
     answer: "No",
 }
 
-var question3 = {
-    title: "What symbols must be used when calling a function??",
+var question4 = {
+    question: "What symbols must be used when calling a function??",
     choices: ["$$", "()", "''", "!!"],
     answer: "()",
 }
-
-//generates questions when quiz starts
-function getQuestions() {
-    askQuestion = questions[Math.floor(Math.random() * questions.length)];
-
-}
-
-
 
 function startQuiz() {
     quizIntro.style.display = "none"
     questionScreen.style.display = "block"
     highScoreButton.style.display = "none"
     countDown();
+    getQuestion();
 }
 
 function endGame() {
