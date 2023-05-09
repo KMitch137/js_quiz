@@ -41,6 +41,9 @@ var questions = [question1, question2, question3, question4];
 
 //generates questions when quiz starts- change questions index
 function getQuestion() {
+
+    //for (var i = 0; i < letters.length; i++) 
+
     questionEL.textContent = questions[0].question
     answer1El.textContent = questions[0].choices[0]
     answer2El.textContent = questions[0].choices[1]
