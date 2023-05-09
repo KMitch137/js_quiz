@@ -5,31 +5,13 @@ var quizIntro = document.querySelector(".quiz-intro");
 var quizFinish = document.querySelector(".quiz-finish-screen");
 var questionScreen = document.querySelector(".question-screen");
 var timerEl = document.getElementById('timer');
-var questions = [question1, question2, question3, question4];
 var scoresList = document.querySelector("scores-list");
 var submitScores = document.getElementById("submit-score");
-
-//generates questions when quiz starts
-function getQuestion() {
-    questionContainer = []
-
-}
-
-function saveScores() {
-
-}
-
-
-submitScores.addEventListener("click", saveScores )
-
-
-    //SAVE SCORES TO OL USING JSON
-
-
-
-    //add scores to highscores
-
-
+var answer1El = document.querySelector(".answer1");
+var answer2El = document.querySelector(".answer2");
+var answer3El = document.querySelector(".answer3");
+var answer4El = document.querySelector(".answer4");
+var questionEL = document.querySelector(".question")
 
 var question1 = {
     question: "Are semicolons bad?",
@@ -55,10 +37,40 @@ var question4 = {
     answer: "()",
 }
 
+var questions = [question1, question2, question3, question4];
+
+//generates questions when quiz starts- change questions index
+function getQuestion() {
+    questionEL.textContent = questions[0].question
+    answer1El.textContent = questions[0].choices[0]
+    answer2El.textContent = questions[0].choices[1]
+    answer3El.textContent = questions[0].choices[2]
+    answer4El.textContent = questions[0].choices[3]
+
+}
+
+function saveScores() {
+
+}
+
+
+submitScores.addEventListener("click", saveScores )
+
+
+    //SAVE SCORES TO OL USING JSON
+
+
+
+    //add scores to highscores
+
+
+
+
+
 function startQuiz() {
-    quizIntro.style.display = "none"
-    questionScreen.style.display = "block"
-    highScoreButton.style.display = "none"
+    quizIntro.style.display = "none";
+    questionScreen.style.display = "block";
+    highScoreButton.style.display = "none";
     countDown();
     getQuestion();
 }
@@ -70,8 +82,6 @@ function endGame() {
 }
 
 function resetGame() {
-    quizFinish.style.display = "none"
-    quizIntro.style.display = "block"
     location.reload();
 }
 
