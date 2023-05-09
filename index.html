@@ -42,11 +42,11 @@
 
                 <div class="quiz-finish-screen">
                     <h2>Finished</h2>
-                    <p>Your score: 00</p>
+                    <p id="your-score">Your score: 00</p>
                     <div>
                         <label for="">Enter Initials:</label>
-                        <input type="text" style="width: 50px">
-                        <button>Submit</button>
+                        <input id="save-score" type="text" style="width: 50px">
+                        <button id="submit-score">Submit</button>
                     </div>
                     <div id="reset-button">
                         <button id="reset">Reset Game</button>
@@ -54,19 +54,14 @@
                 </div>
 
                 <section id="top-score">
-                    <h2>Highscores</h2>
-                    <ol>
-                        <!--generate in JS-->
-                        <li>km - 20</li>
-                        <li>ak - 22</li>
-                        <li>km - 20</li>
-                        <li>ak - 22</li>
-                    </ol>
+                    <h2>Highscores:</h2>
+                    <ul id="scores-list"></ul>
+                    
                     <div id="back-button">
                         <button id="back">Go Back</button>
                     </div>
                 </section>
-                
+
             </main>
         </div>
         <script src="./assets/script.js"></script>

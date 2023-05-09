@@ -1,19 +1,35 @@
 var startButton = document.getElementById("start");
-var highScoreButton = document.getElementById("see-scores")
+var highScoreButton = document.getElementById("see-scores");
 var highScores = document.getElementById("top-score");
 var quizIntro = document.querySelector(".quiz-intro");
 var quizFinish = document.querySelector(".quiz-finish-screen");
-var questionScreen = document.querySelector(".question-screen")
+var questionScreen = document.querySelector(".question-screen");
 var timerEl = document.getElementById('timer');
-var questions = [question1, question2, question3, question4]
-
+var questions = [question1, question2, question3, question4];
+var scoresList = document.querySelector("scores-list");
+var submitScores = document.getElementById("submit-score");
 
 //generates questions when quiz starts
 function getQuestion() {
     questionContainer = []
 
- 
 }
+
+function saveScores() {
+
+}
+
+
+submitScores.addEventListener("click", saveScores )
+
+
+    //SAVE SCORES TO OL USING JSON
+
+
+
+    //add scores to highscores
+
+
 
 var question1 = {
     question: "Are semicolons bad?",
