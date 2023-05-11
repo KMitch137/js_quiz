@@ -43,7 +43,7 @@ var questions = [question1, question2, question3, question4];
 //generates questions when quiz starts- change questions index
 function getQuestion() {
 
-    var i = Math.floor(Math.random() * 4); 
+    var i = Math.floor(Math.random() * 4);
 
     questionEL.textContent = questions[i].question
     answer1El.textContent = questions[i].choices[0]
@@ -53,20 +53,25 @@ function getQuestion() {
 
 }
 
-function saveScores() {
-
-}
-
 nextButton.addEventListener("click", getQuestion)
 
-submitScores.addEventListener("click", saveScores )
-
-
-    //SAVE SCORES TO OL USING JSON
 
 
 
-    //add scores to highscores
+
+
+
+submitScores.addEventListener("click", saveScores)
+
+function saveScores() {
+    var highScore = {
+        student: student.value,
+        grade: grade.value,
+    }
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+}
+
+
 
 
 
