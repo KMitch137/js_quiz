@@ -16,7 +16,7 @@ var questionEL = document.querySelector(".question")
 
 var question1 = {
     question: "Are semicolons bad?",
-    choices: ["Yes", "No", "Sometimes", "what?"],
+    choices: ["Yes", "No", "Sometimes", "What?"],
     answer: "No",
 }
 
@@ -43,7 +43,7 @@ var questions = [question1, question2, question3, question4];
 //generates questions when quiz starts- change questions index
 function getQuestion() {
 
-    var i = Math.floor(Math.random() * 4);
+    var i = Math.floor(Math.random() * 3);
 
     questionEL.textContent = questions[i].question
     answer1El.textContent = questions[i].choices[0]
