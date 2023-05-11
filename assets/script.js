@@ -1,4 +1,5 @@
 var startButton = document.getElementById("start");
+var nextButton = document.getElementById("next-question");
 var highScoreButton = document.getElementById("see-scores");
 var highScores = document.getElementById("top-score");
 var quizIntro = document.querySelector(".quiz-intro");
@@ -21,7 +22,7 @@ var question1 = {
 
 var question2 = {
     question: "Are question marks bad?",
-    choices: ["Yes", "No", "Sometimes", "what?"],
+    choices: ["Yes", "No", "Sometimes", "What?"],
     answer: "No",
 }
 
@@ -42,13 +43,13 @@ var questions = [question1, question2, question3, question4];
 //generates questions when quiz starts- change questions index
 function getQuestion() {
 
-    //for (var i = 0; i < letters.length; i++) 
+    var i = Math.floor(Math.random() * 4); 
 
-    questionEL.textContent = questions[0].question
-    answer1El.textContent = questions[0].choices[0]
-    answer2El.textContent = questions[0].choices[1]
-    answer3El.textContent = questions[0].choices[2]
-    answer4El.textContent = questions[0].choices[3]
+    questionEL.textContent = questions[i].question
+    answer1El.textContent = questions[i].choices[0]
+    answer2El.textContent = questions[i].choices[1]
+    answer3El.textContent = questions[i].choices[2]
+    answer4El.textContent = questions[i].choices[3]
 
 }
 
@@ -56,6 +57,7 @@ function saveScores() {
 
 }
 
+nextButton.addEventListener("click", getQuestion)
 
 submitScores.addEventListener("click", saveScores )
 
@@ -99,7 +101,7 @@ start.addEventListener("click", startQuiz, countDown)
 
 // Timer Settings
 function countDown() {
-    var timeLeft = 05;
+    var timeLeft = 60;
     var timeInterval = setInterval(function () {
         if (timeLeft > 1) {
             timerEl.textContent = "Time Left :" + timeLeft;

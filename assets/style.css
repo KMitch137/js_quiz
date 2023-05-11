@@ -121,6 +121,11 @@ main {
     margin: 0 auto
 }
 
+#next-question {
+    display: block;
+    margin: 0 auto
+}
+
 
 /*-----------------*/
 /*Main Quiz Content*/
