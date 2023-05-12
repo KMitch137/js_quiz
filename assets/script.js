@@ -8,11 +8,15 @@ var questionScreen = document.querySelector(".question-screen");
 var timerEl = document.getElementById('timer');
 var scoresList = document.querySelector("scores-list");
 var submitScores = document.getElementById("submit-score");
+var finalScore = document.getElementById("your-score")
 var answer1El = document.querySelector(".answer1");
 var answer2El = document.querySelector(".answer2");
 var answer3El = document.querySelector(".answer3");
 var answer4El = document.querySelector(".answer4");
-var questionEL = document.querySelector(".question")
+var questionEL = document.querySelector(".question");
+var timeLeft = 5;
+var timeInterval;
+var studentName = document.getElementById("save-score");
 
 var question1 = {
     question: "Are semicolons bad?",
@@ -39,41 +43,46 @@ var question4 = {
 }
 
 var questions = [question1, question2, question3, question4];
-
+var qi = 0
 //generates questions when quiz starts- change questions index
 function getQuestion() {
-
-    var i = Math.floor(Math.random() * 3);
-
-    questionEL.textContent = questions[i].question
-    answer1El.textContent = questions[i].choices[0]
-    answer2El.textContent = questions[i].choices[1]
-    answer3El.textContent = questions[i].choices[2]
-    answer4El.textContent = questions[i].choices[3]
+    if (qi == questions.length) return endGame();
+    questionEL.textContent = questions[qi].question
+    answer1El.textContent = questions[qi].choices[0]
+    answer2El.textContent = questions[qi].choices[1]
+    answer3El.textContent = questions[qi].choices[2]
+    answer4El.textContent = questions[qi].choices[3]
 
 }
 
-nextButton.addEventListener("click", getQuestion)
 
+answer1El.addEventListener("click", wrongAnswer)
+answer2El.addEventListener("click", rightAnswer)
+answer3El.addEventListener("click", wrongAnswer)
+answer4El.addEventListener("click", wrongAnswer)
 
+function wrongAnswer() {
+    alert("WRONG ANSWER");
+    timeLeft -= 5;
+    qi++;
+    getQuestion();
 
+}
 
+function rightAnswer() {
+    qi++;
+    getQuestion();
 
+}
 
 
 submitScores.addEventListener("click", saveScores)
 
-function saveScores() {
-    var highScore = {
-        student: student.value,
-        grade: grade.value,
-    }
-    localStorage.setItem("highScore", JSON.stringify(highScore));
+async function saveScores() {
+    var score = await localStorage.students ? JSON.parse(localStorage.students) : [];
+    score.push({"student":studentName,"score":timeLeft});
+    localStorage.students = JSON.stringify(score);
 }
-
-
-
-
 
 
 
@@ -85,10 +94,14 @@ function startQuiz() {
     getQuestion();
 }
 
+var score = document.getElementById("score");
+
 function endGame() {
+    clearInterval(timeInterval);
     questionScreen.style.display = "none";
     quizFinish.style.display = "block";
     highScoreButton.style.display = "block";
+    score.innerHTML=timeLeft;
 }
 
 function resetGame() {
@@ -106,16 +119,17 @@ start.addEventListener("click", startQuiz, countDown)
 
 // Timer Settings
 function countDown() {
-    var timeLeft = 60;
-    var timeInterval = setInterval(function () {
-        if (timeLeft > 1) {
-            timerEl.textContent = "Time Left :" + timeLeft;
-            timeLeft--;
-        } else {
-            timerEl.textContent = "Game Over";
+    timeInterval = setInterval(function () {
+        timeLeft--;
+
+        if(timeLeft<1) {
             clearInterval(timeInterval);
-            endGame()
+            timeLeft = 0;
+            endGame();
         }
+
+        timerEl.textContent = "Timer: 00:" + timeLeft;
+
     }, 1000);
 }
 

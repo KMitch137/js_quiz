@@ -101,7 +101,6 @@ button:hover {
 /*header/quiz intro section*/
 /*-------------------------*/
 
-.quiz-intro,
 main {
     margin-bottom: 30vh;
     margin-left: 10%;
@@ -111,14 +110,26 @@ main {
     box-shadow: 20px 10px black;
 }
 
+.quiz-intro {
+    margin-bottom: 30vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-image: linear-gradient(150deg, rgb(253, 251, 251), rgb(243, 129, 129));
+    display: block;
+    box-shadow: 20px 10px black;
+    padding: 5px;
+}
+
 
 .quiz-intro p {
     text-align: center;
+
 }
 
 .quiz-intro button {
     display: block;
-    margin: 0 auto
+    margin: 0 auto;
+    
 }
 
 #next-question {
@@ -132,7 +143,7 @@ main {
 /*-----------------*/
 
 main {
-    display: block;
+   display: block;
 }
 
 
