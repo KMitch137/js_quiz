@@ -14,9 +14,9 @@ var answer2El = document.querySelector(".answer2");
 var answer3El = document.querySelector(".answer3");
 var answer4El = document.querySelector(".answer4");
 var questionEL = document.querySelector(".question");
-var timeLeft = 5;
+var timeLeft = 30;
 var timeInterval;
-var studentName = document.getElementById("save-score");
+
 
 var question1 = {
     question: "Are semicolons bad?",
@@ -79,9 +79,13 @@ function rightAnswer() {
 submitScores.addEventListener("click", saveScores)
 
 async function saveScores() {
-    var score = await localStorage.students ? JSON.parse(localStorage.students) : [];
+    var studentName = document.getElementById("save-score").value;
+    console.log(localStorage.students)
+    // var score = await localStorage.students ? JSON.parse(localStorage.students) : [];
+    var score = JSON.parse(localStorage.getItem("user")) || [];
     score.push({"student":studentName,"score":timeLeft});
-    localStorage.students = JSON.stringify(score);
+    localStorage.setItem ("user", JSON.stringify(score));
+    
 }
 
 
